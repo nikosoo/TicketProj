@@ -22,7 +22,7 @@ const TicketDesc = ({ _id, subject, description, category, username, status, cre
     setFeedback('');  // Clear previous feedback
 
     try {
-      const response = await axios.post(`http://localhost:5000/api/tickets/${_id}/comments`, {
+      const response = await axios.post(`https://ticket-proj.vercel.app/api/tickets/${_id}/comments`, {
         username: loggedInUser,
         comment,
       }, {

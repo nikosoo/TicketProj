@@ -15,7 +15,7 @@ const AllUsers = () => {
 
     const fetchUsers = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/auth/all-users');
+            const response = await axios.get('https://ticket-proj.vercel.app/api/auth/all-users');
             setUsers(response.data);
             setLoading(false);
         } catch (err) {
@@ -26,7 +26,7 @@ const AllUsers = () => {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/auth/users/${id}`);
+            await axios.delete(`https://ticket-proj.vercel.app/api/auth/users/${id}`);
             setUsers(users.filter((user) => user._id !== id)); // Remove the user from the state
         } catch (err) {
             setError(err.message);
@@ -49,7 +49,7 @@ const AllUsers = () => {
 
     const handleUpdate = async (id) => {
         try {
-            await axios.put(`http://localhost:5000/api/auth/users/${id}`, editFormData);
+            await axios.put(`https://ticket-proj.vercel.app/api/auth/users/${id}`, editFormData);
             setEditingUser(null); // Close the edit form after the update
             fetchUsers(); // Fetch updated users
         } catch (err) {

@@ -26,7 +26,7 @@ const UserInfo = () => {
     try {
       // Make API request to update user details
       const response = await axios.put(
-        'http://localhost:5000/api/auth/update',
+        'https://ticket-proj.vercel.app/api/auth/update',
         { [field]: updatedInfo[field] },
         { headers: { Authorization: `Bearer ${token}` } }
       );

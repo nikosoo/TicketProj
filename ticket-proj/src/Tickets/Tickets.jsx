@@ -34,7 +34,7 @@ const Tickets = ({ searchQuery }) => {
                     headers.Authorization = `Bearer ${token}`;
                 }
         
-                const response = await axios.get('http://localhost:5000/api/tickets', { headers });
+                const response = await axios.get('https://ticket-proj.vercel.app/api/tickets', { headers });
                 setTickets(response.data);
             } catch (err) {
                 setError('Error fetching tickets: ' + (err.response?.data?.message || err.message));
@@ -67,7 +67,7 @@ const Tickets = ({ searchQuery }) => {
     const handleDeleteTicket = async (ticketId) => {
         try {
             const headers = { Authorization: `Bearer ${token}` };
-            await axios.delete(`http://localhost:5000/api/tickets/${ticketId}`, { headers });
+            await axios.delete(`https://ticket-proj.vercel.app/api/tickets/${ticketId}`, { headers });
             setTickets(tickets.filter(ticket => ticket._id !== ticketId));
         } catch (err) {
             setError('Error deleting ticket: ' + (err.response?.data?.message || err.message));

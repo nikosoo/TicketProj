@@ -45,7 +45,7 @@ const SubmitTicket = () => {
     }
   
     try {
-      const response = await axios.post('http://localhost:5000/api/tickets', {
+      const response = await axios.post('https://ticket-proj.vercel.app/api/tickets', {
         ticketSubject,
         relatedUrl,
         description: ticketDescription,

@@ -41,7 +41,7 @@ const SignIn = ({ toggleSignInModal }) => {
       let response;
       if (isRegister) {
         // Registration logic
-        response = await axios.post('http://localhost:5000/api/auth/register', {
+        response = await axios.post('https://ticket-proj.vercel.app/api/auth/register', {
           name: formData.name,
           email: formData.email,
           password: formData.password,
@@ -52,7 +52,7 @@ const SignIn = ({ toggleSignInModal }) => {
         });
       } else {
         // Login logic
-        response = await axios.post('http://localhost:5000/api/auth/login', {
+        response = await axios.post('https://ticket-proj.vercel.app/api/auth/login', {
           email: formData.email,
           password: formData.password,
         });

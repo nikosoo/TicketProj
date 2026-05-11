@@ -16,7 +16,7 @@ const NavBar = ({ toggleSignInModal }) => {
     if (user.isAdmin) {
       const fetchNewTickets = async () => {
         try {
-          const response = await axios.get('http://localhost:5000/api/tickets/admin/check-new-tickets', {
+          const response = await axios.get('https://ticket-proj.vercel.app/api/tickets/admin/check-new-tickets', {
             headers: { Authorization: `Bearer ${user.token}` },
           });
           dispatch(setHasNewTickets(response.data.hasNewTickets)); // Update Redux state with hasNewTickets
@@ -33,7 +33,7 @@ const NavBar = ({ toggleSignInModal }) => {
   const handleViewTickets = async () => {
     if (user.isAdmin && user.hasNewTickets) {
       try {
-        await axios.post('http://localhost:5000/api/tickets/admin/clear-new-tickets', {}, {
+        await axios.post('https://ticket-proj.vercel.app/api/tickets/admin/clear-new-tickets', {}, {
           headers: { Authorization: `Bearer ${user.token}` },
         });
         dispatch(setHasNewTickets(false)); // Clear the red dot in Redux state

@@ -11,7 +11,7 @@ const AdminPanel = () => {
         const fetchTickets = async () => {
             try {
                 const token = localStorage.getItem('token'); // Assuming JWT is stored in localStorage
-                const response = await axios.get('http://localhost:5000/api/tickets', {
+                const response = await axios.get('https://ticket-proj.vercel.app/api/tickets', {
                     headers: {
                         Authorization: `Bearer ${token}` // Pass the token in the headers
                     }

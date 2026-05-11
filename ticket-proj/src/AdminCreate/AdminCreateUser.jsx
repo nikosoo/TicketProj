@@ -22,7 +22,7 @@ const AdminCreateUser = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/auth/register', formData);
+      const response = await axios.post('https://ticket-proj.vercel.app/api/auth/register', formData);
       setSuccessMessage('User created successfully');
       setFormData({
         name: '',
